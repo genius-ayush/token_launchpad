@@ -2,6 +2,7 @@ import { Keypair, PublicKey, SystemProgram, Transaction } from "@solana/web3.js"
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { MINT_SIZE, TOKEN_2022_PROGRAM_ID, createMintToInstruction, createAssociatedTokenAccountInstruction, getMintLen, createInitializeMetadataPointerInstruction, createInitializeMintInstruction, TYPE_SIZE, LENGTH_SIZE, ExtensionType, mintTo, getOrCreateAssociatedTokenAccount, getAssociatedTokenAddressSync } from "@solana/spl-token"
 import { createInitializeInstruction, pack } from '@solana/spl-token-metadata';
+import { Button } from "./ui/button";
 
 
 export function TokenLaunchpad() {
@@ -105,6 +106,7 @@ export function TokenLaunchpad() {
         flexDirection: 'column'
     }}>
         <h1>Solana Token Launchpad</h1>
+        <Button>hey</Button>
         <input id="name" className='inputText' type='text' placeholder='Name'></input> <br />
         <input id="symbol" className='inputText' type='text' placeholder='Symbol'></input> <br />
         <input id="imgURL" className='inputText' type='text' placeholder='Image URL'></input> <br />
