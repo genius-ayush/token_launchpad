@@ -5,11 +5,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
   WalletModalProvider,
-  WalletDisconnectButton,
-  WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
 import '@solana/wallet-adapter-react-ui/styles.css';
 import { ThemeProvider } from './components/theme-provider';
+import { Toaster } from '@/components/ui/sonner'
 import LandingPage from './components/LandingPage';
 import TokenLaunchpad from './components/TokenLaunchpad';
 
@@ -24,6 +23,7 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/create-token" element={<TokenLaunchpad />} />
               </Routes>
+              <Toaster richColors closeButton position="bottom-right" />
             </WalletModalProvider>
           </WalletProvider>
         </ConnectionProvider>

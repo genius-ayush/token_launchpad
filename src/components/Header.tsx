@@ -11,9 +11,13 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
-import WalletButton from "./WalletButton";
+import { WalletButton } from "./WalletButton";
 
-export function Header() {
+type HeaderProps = {
+  showNavItems?: boolean
+}
+
+export function Header({ showNavItems = true }: HeaderProps) {
   const navItems = [
     {
       name: "Home",
@@ -33,13 +37,14 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
+          
         <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
+          {showNavItems && <NavItems items={navItems} />}
+          <div className="flex items-center gap-4 relative z-50">
             <WalletButton/>
           </div>
         </NavBody>
@@ -58,7 +63,7 @@ export function Header() {
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
           >
-            {navItems.map((item, idx) => (
+            {showNavItems && navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
                 href={item.link}
@@ -70,13 +75,7 @@ export function Header() {
             ))}
             <div className="flex w-full flex-col gap-4">
               
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
+              <WalletButton/>
             </div>
           </MobileNavMenu>
         </MobileNav>
