@@ -13,10 +13,11 @@ import LandingPage from './components/LandingPage';
 import TokenLaunchpad from './components/TokenLaunchpad';
 
 function App() {
+  const endpoint = import.meta.env.VITE_DEVNET_URL || "";
   return (
     <BrowserRouter>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/WD0bp8fzGoX7oGVplbbqc"}>
+        <ConnectionProvider endpoint={endpoint}>
           <WalletProvider wallets={[]} autoConnect>
             <WalletModalProvider>
               <Routes>
