@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { Header } from "./Header";
 import { useNavigate } from 'react-router-dom';
 import Footer from "./Footer";
+import { Features } from "./Features";
+import { CallToAction } from "./CallToAction";
 
 export function HeroSectionOne() {
 
@@ -18,7 +20,7 @@ export function HeroSectionOne() {
         <div className="absolute h-100 w-px bg-gradient-to-b from-transparent via-yellow-500 to-transparent" />
       </div>
       <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
-        <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+        <div className="absolute mx-auto h-px w-full bg-gradient-to-r from-transparent via-yellow-500 to-transparent" />
       </div>
       <div className="px-4 py-10 md:py-20">
         <h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300 pt-10">
@@ -74,7 +76,7 @@ export function HeroSectionOne() {
           </button>
           
         </motion.div>
-        {/* <motion.div
+        <motion.div
           initial={{
             opacity: 0,
             y: 10,
@@ -98,9 +100,10 @@ export function HeroSectionOne() {
               width={1000}
             />
           </div>
-        </motion.div> */}
+        </motion.div>
       </div>
-
+      <Features/>
+      <CallToAction/>
       <Footer/>
     </div>
   );
