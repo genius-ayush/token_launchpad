@@ -31,6 +31,7 @@ import { Keypair, SystemProgram, Transaction } from '@solana/web3.js'
 import { WalletButton } from './WalletButton'
 import { toast } from 'sonner'
 import Footer from './Footer'
+import { HowToUseAndFAQ } from './Accordion'
 
 function TokenLaunchpad() {
 
@@ -272,6 +273,8 @@ function TokenLaunchpad() {
                     </Button>
                 </CardFooter>
             </Card>
+
+            <HowToUseAndFAQ/>
 
             <Footer/>
         </div>

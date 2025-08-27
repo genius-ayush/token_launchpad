@@ -27,11 +27,7 @@ export function Header({ showNavItems = true }: HeaderProps) {
       name: "Features",
       link: "#features",
     },
-    
-    {
-      name: "Contact",
-      link: "#contact",
-    },
+
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
